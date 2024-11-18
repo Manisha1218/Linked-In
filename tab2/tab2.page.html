@@ -1,0 +1,52 @@
+<!-- <app-shared-header></app-shared-header> -->
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-button>
+                <ion-avatar slot="icon-only" [routerLink]="['/profile']" class="profile-avatar">
+                    <img src="https://up.yimg.com/ib/th?id=OIP.wwy9gHI3ndvPOs89AmtDlAAAAA&pid=Api&rs=1&c=1&qlt=95&w=83&h=111" alt="Profile">
+                </ion-avatar>
+            </ion-button>
+            <ion-searchbar placeholder="Search" class="search-bar" show-cancel-button="focus" style="width: 250px;"></ion-searchbar>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-button>
+                <ion-button [routerLink]="['/message']" expand="full">
+                    <ion-icon name="chatbubbles-outline" slot="start"></ion-icon>
+                    <ion-badge>5</ion-badge>
+                </ion-button>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-buttons slot="start">
+    <ion-back-button defaultHref="/"></ion-back-button>
+</ion-buttons>
+<ion-content>
+    <ion-list>
+        <ion-item *ngFor="let connection of connections" lines="none">
+            <ion-avatar slot="start">
+                <img [src]="connection.avatar" />
+            </ion-avatar>
+            <ion-label>
+                <h2>{{ connection.name }}</h2>
+                <p>{{ connection.jobTitle }}</p>
+                <div class="button-container">
+                    <ion-button class="rounded-button" expand="full" color="primary" (click)="presentAlert()">
+                        <ion-icon slot="start" name="checkmark-circle"></ion-icon>
+                        Connect
+                    </ion-button>
+
+                    <!-- Decline Connection Button -->
+                    <ion-button class="rounded-button" expand="full" color="danger" (click)="presentRemoveAlert()">
+                        <ion-icon slot="start" name="remove-circle"></ion-icon>
+                        Remove
+                    </ion-button>
+
+
+                </div>
+            </ion-label>
+        </ion-item>
+    </ion-list>
+</ion-content>

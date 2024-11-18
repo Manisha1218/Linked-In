@@ -1,0 +1,76 @@
+<!-- <ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-searchbar placeholder="Search" class="search-bar"></ion-searchbar>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-button>
+                <ion-icon name="settings-outline" slot="icon-only"></ion-icon>
+            </ion-button>
+            <ion-avatar slot="icon-only" class="profile-avatar">
+                <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Profile">
+            </ion-avatar>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header> -->
+
+
+
+
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-button>
+                <ion-avatar slot="icon-only" [routerLink]="['/profile']" class="profile-avatar">
+                    <img src="https://up.yimg.com/ib/th?id=OIP.wwy9gHI3ndvPOs89AmtDlAAAAA&pid=Api&rs=1&c=1&qlt=95&w=83&h=111" alt="Profile">
+                </ion-avatar>
+            </ion-button>
+            <ion-searchbar placeholder="Search for jobs" debounce="500" [(ngModel)]="searchQuery"></ion-searchbar>
+
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-button>
+                <ion-button [routerLink]="['/message']" expand="full">
+                    <ion-icon name="chatbubbles-outline" slot="start"></ion-icon>
+                    <ion-badge>5</ion-badge>
+                </ion-button>
+
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons>
+        <p> Notification </p>
+        <ion-buttons slot="end">
+            <ion-button routerLink="/setting" fill="clear">
+                <ion-icon name="settings-outline" slot="icon-only"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+
+    <ion-list>
+        <!-- Notification Item -->
+        <ion-item *ngFor="let notification of notifications" lines="none" class="notification-item">
+            <ion-avatar slot="start" class="notification-avatar">
+                <img [src]="notification.avatar" alt="{{ notification.name }}'s Avatar">
+            </ion-avatar>
+            <ion-label>
+                <h3 class="notification-text">
+                    <strong>{{ notification.name }}</strong> {{ notification.action }}
+                    <span class="notification-content">{{ notification.content }}</span>
+                </h3>
+                <ion-note color="medium" class="notification-time">{{ notification.time }}</ion-note>
+            </ion-label>
+            <ion-buttons slot="end">
+                <ion-button *ngIf="notification.buttonText" fill="outline" color="primary" (click)="handleButtonClick(notification.route)">
+                    {{ notification.buttonText }}
+                </ion-button>
+            </ion-buttons>
+        </ion-item>
+    </ion-list>
+</ion-content>

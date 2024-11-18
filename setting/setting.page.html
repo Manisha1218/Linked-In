@@ -1,0 +1,103 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Settings</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <!-- Profile Section -->
+
+        <ion-item lines="full">
+            <ion-label>Profile</ion-label>
+            <ion-button fill="clear" slot="end" (click)="goToProfile()">Edit</ion-button>
+        </ion-item>
+
+        <!-- Email Settings -->
+        <ion-item>
+            <ion-label>Email</ion-label>
+            <ion-input type="email" [(ngModel)]="userEmail" placeholder="Enter your email"></ion-input>
+        </ion-item>
+
+        <!-- Password Settings -->
+        <ion-item>
+            <ion-label>Password</ion-label>
+            <ion-input type="password" [(ngModel)]="userPassword" placeholder="Change your password"></ion-input>
+        </ion-item>
+
+        <!-- Privacy Settings -->
+        <ion-item>
+            <ion-label>Privacy</ion-label>
+            <ion-toggle [(ngModel)]="privacy" slot="end"></ion-toggle>
+        </ion-item>
+
+        <!-- Notification Settings -->
+        <ion-item>
+            <ion-label>Notifications</ion-label>
+            <ion-toggle [(ngModel)]="notifications" slot="end"></ion-toggle>
+        </ion-item>
+
+        <!-- Language Settings -->
+        <ion-item>
+            <ion-label>Language</ion-label>
+            <ion-select [(ngModel)]="selectedLanguage" placeholder="Select Language">
+                <ion-select-option value="en">English</ion-select-option>
+                <ion-select-option value="es">Spanish</ion-select-option>
+                <ion-select-option value="fr">French</ion-select-option>
+            </ion-select>
+        </ion-item>
+
+        <!-- Dark Mode Settings -->
+        <ion-item>
+            <ion-label>Dark Mode</ion-label>
+            <ion-toggle [(ngModel)]="darkMode" slot="end"></ion-toggle>
+        </ion-item>
+
+        <!-- Theme Settings -->
+        <ion-item>
+            <ion-label>Theme</ion-label>
+            <ion-select [(ngModel)]="selectedTheme" placeholder="Select Theme">
+                <ion-select-option value="light">Light</ion-select-option>
+                <ion-select-option value="dark">Dark</ion-select-option>
+            </ion-select>
+        </ion-item>
+
+        <!-- App Version Section -->
+        <ion-item>
+            <ion-label>App Version</ion-label>
+            <ion-label slot="end">1.0.0</ion-label>
+            <!-- Adjust version accordingly -->
+        </ion-item>
+
+        <!-- About Section -->
+        <ion-item>
+            <ion-label>About</ion-label>
+            <ion-button fill="clear" slot="end" (click)="toggleAccordion()">
+                <ion-icon name="{{ accordionOpened ? 'chevron-up' : 'chevron-down' }}" slot="end"></ion-icon>
+                Learn More
+            </ion-button>
+        </ion-item>
+
+        <!-- Accordion Content -->
+        <ion-item *ngIf="accordionOpened">
+            <ion-label>
+                This is an app designed to provide an easy and efficient way to manage LinkedIn-like settings, such as privacy, notifications, and account management. It aims to streamline user experience by centralizing all settings in one place.
+            </ion-label>
+        </ion-item>
+
+        <!-- Account Settings -->
+        <ion-item>
+            <ion-label>Account</ion-label>
+            <ion-button fill="clear" slot="end" (click)="goToAccountSettings()">Manage</ion-button>
+        </ion-item>
+
+        <!-- Log Out -->
+        <ion-item>
+            <ion-label>Log Out</ion-label>
+            <ion-button color="danger" fill="outline" slot="end" (click)="logOut()">Log Out</ion-button>
+        </ion-item>
+    </ion-list>
+</ion-content>

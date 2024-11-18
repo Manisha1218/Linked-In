@@ -1,0 +1,26 @@
+ion-header {
+    --background: var(--ion-color-secondary);
+    --color: white; // Change the title color to white
+}
+
+.profile-picture-item {
+    display: flex;
+    align-items: center;
+}
+
+.profile-picture-item ion-input {
+    flex: 1;
+}
+
+ion-item {
+    margin-bottom: 20px; // More spacing between items
+}
+
+.submit-button {
+    margin-top: 20px; // Space above the button
+    font-weight: bold; // Bold text for emphasis
+}
+
+ion-label {
+    font-weight: bold; // Make labels bold
+}

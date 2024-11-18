@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons>
+        <ion-title>View Jobs</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <!-- Search bar to filter jobs -->
+    <ion-searchbar placeholder="Search for jobs" debounce="500" [(ngModel)]="searchQuery"></ion-searchbar>
+
+    <!-- Job List Section -->
+    <ion-list>
+        <ion-item *ngFor="let job of filteredJobs">
+            <ion-avatar slot="start">
+                <img [src]="job.companyLogo" alt="{{ job.company }} Logo">
+            </ion-avatar>
+            <ion-label>
+                <h2>{{ job.jobTitle }}</h2>
+                <p>{{ job.company }}</p>
+                <ion-note color="medium">{{ job.location }}</ion-note>
+            </ion-label>
+            <ion-buttons slot="end">
+                <ion-button fill="outline" [routerLink]="['/job']" (click)="viewJobDetails(job)">View Details</ion-button>
+            </ion-buttons>
+        </ion-item>
+    </ion-list>
+
+    <!-- No jobs found message -->
+    <ion-item *ngIf="filteredJobs.length === 0">
+        <ion-label>No jobs found matching your search.</ion-label>
+    </ion-item>
+</ion-content>

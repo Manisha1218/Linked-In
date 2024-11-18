@@ -1,0 +1,53 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Create Post</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-card-header>
+            <ion-avatar class="profile-pic">
+                <img src="https://up.yimg.com/ib/th?id=OIP.wwy9gHI3ndvPOs89AmtDlAAAAA&pid=Api&rs=1&c=1&qlt=95&w=83&h=111" />
+            </ion-avatar>
+            <ion-card-title>What's on your mind?</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-textarea placeholder="Write something..." [(ngModel)]="postContent" rows="6"></ion-textarea>
+            <ion-button expand="full" (click)="createPost()" color="primary">
+                Post
+            </ion-button>
+        </ion-card-content>
+    </ion-card>
+    <ion-icon name="camera" [routerLink]="['/camera']"></ion-icon>
+
+    <ion-icon name="at"></ion-icon>
+    <ion-icon name="pricetag-outline" (click)="showPopularLinkedInProfiles()"></ion-icon>
+    <ion-list *ngIf="popularProfiles.length > 0">
+        <ion-item *ngFor="let profile of popularProfiles">
+            <ion-label>
+                <a [href]="profile.profileUrl" target="_blank">
+              {{ profile.name }}
+            </a>
+            </ion-label>
+        </ion-item>
+    </ion-list>
+
+
+    <ion-list>
+        <ion-item *ngFor="let post of posts">
+            <ion-avatar slot="start">
+                <img [src]="post.avatar" />
+            </ion-avatar>
+            <ion-label>
+                <h2>{{ post.name }}</h2>
+                <p>{{ post.content }}</p>
+                <p class="post-date">{{ post.date | date:'short' }}</p>
+                <img *ngIf="post.image" [src]="post.image" class="post-image" />
+            </ion-label>
+        </ion-item>
+    </ion-list>
+</ion-content>

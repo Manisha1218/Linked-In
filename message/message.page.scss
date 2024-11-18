@@ -1,0 +1,59 @@
+ion-item {
+    --padding-start: 16px;
+    --inner-padding-end: 16px;
+}
+
+ion-avatar img {
+    border-radius: 50%;
+    /* Make avatar images circular */
+}
+
+ion-segment {
+    margin: 16px 0;
+}
+
+ion-segment {
+    --background: #f0f0f0;
+    /* Light gray background */
+    --indicator-color: #3880ff;
+    /* Blue indicator color */
+    --color-checked: #3880ff;
+    /* Blue text color when selected */
+    --color: #4f4f4f;
+    /* Dark gray text color */
+    border-radius: 8px;
+    padding: 10px 20px;
+}
+
+ion-segment-button {
+    --padding-start: 10px;
+    --padding-end: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+ion-segment-button ion-icon {
+    font-size: 20px;
+    /* Adjust icon size */
+    margin-right: 8px;
+    /* Space between icon and text */
+    color: #3880ff;
+    /* Icon color */
+}
+
+ion-segment-button:hover {
+    background-color: #f0f8ff;
+    /* Light blue background on hover */
+}
+
+ion-segment-button[aria-checked="true"] {
+    --background: #3880ff;
+    /* Background color for selected button */
+    --color: white;
+    /* Text color for selected button */
+}
+
+ion-segment-button[aria-checked="true"] ion-icon {
+    color: white;
+    /* Icon color for selected button */
+}

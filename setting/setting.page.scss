@@ -1,0 +1,41 @@
+ion-header {
+    background-color: #0077b5;
+    /* LinkedIn Blue */
+    color: white;
+}
+
+ion-toolbar {
+    --background: #0077b5;
+}
+
+ion-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+ion-item {
+    --background: #f3f3f3;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+ion-label {
+    font-size: 16px;
+}
+
+ion-toggle {
+    --handle-background: #0077b5;
+}
+
+ion-button {
+    --color: #0077b5;
+    font-weight: bold;
+}
+
+ion-select {
+    width: 100%;
+}
+
+ion-item:last-child {
+    margin-top: 20px;
+}

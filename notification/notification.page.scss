@@ -1,0 +1,101 @@
+ion-toolbar {
+    --background: #3880ff;
+    /* Custom color for toolbar */
+    --color: white;
+    /* Text color for toolbar */
+    border-radius: 15px;
+    /* Rounded corners */
+}
+
+.notification-item {
+    --background: #f9f9f9;
+    --border-radius: 10px;
+    margin: 10px 0;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.notification-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.notification-avatar img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.notification-text {
+    font-size: 16px;
+    color: #333;
+}
+
+.notification-content {
+    display: block;
+    color: #666;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.notification-time {
+    font-size: 12px;
+    margin-top: 5px;
+    color: #aaa;
+}
+
+ion-button {
+    transition: background-color 0.3s ease;
+}
+
+ion-button:hover {
+    background-color: #007aff;
+    /* Hover effect for button */
+}
+
+ion-toolbar {
+    --background: #0073b1;
+    /* LinkedIn blue */
+    color: #fff;
+}
+
+.search-bar {
+    --background: #f3f3f3;
+}
+
+.notification-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #f3f6f9;
+    border-bottom: 1px solid #e1e4e8;
+}
+
+.notification-avatar {
+    width: 40px;
+    height: 40px;
+}
+
+.notification-text {
+    font-size: 0.95em;
+    margin: 0;
+    font-weight: normal;
+}
+
+.notification-content {
+    color: #333;
+}
+
+.notification-time {
+    font-size: 0.85em;
+    color: #666;
+}
+
+ion-button {
+    font-size: 0.85em;
+    margin-left: auto;
+    --padding-start: 10px;
+    --padding-end: 10px;
+}

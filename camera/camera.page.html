@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-toolbar color="secondary">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/settings"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Choose Post</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+    <form (ngSubmit)="onSubmit()" #profileForm="ngForm">
+
+        <!-- Profile Picture Upload -->
+        <ion-item class="profile-picture-item">
+            <!-- <ion-label>Choose Post</ion-label> -->
+            <ion-input type="file" (change)="onFileChange($event)" accept="image/*" name="profilePicture"></ion-input>
+        </ion-item>
+
+        <!-- 
+        <ion-item>
+            <ion-label position="floating">Name</ion-label>
+            <ion-input type="text" [(ngModel)]="userName" name="userName" required></ion-input>
+        </ion-item>
+
+
+        <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input type="email" [(ngModel)]="userEmail" name="userEmail" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Favorite Genres</ion-label>
+            <ion-select [(ngModel)]="favoriteGenres" name="favoriteGenres" multiple="true" interface="action-sheet">
+                <ion-select-option value="rock">Rock</ion-select-option>
+                <ion-select-option value="pop">Pop</ion-select-option>
+                <ion-select-option value="jazz">Jazz</ion-select-option>
+                <ion-select-option value="classical">Classical</ion-select-option>
+            </ion-select>
+        </ion-item> -->
+
+        <!-- Submit Button -->
+        <ion-button expand="full" type="submit" color="primary" [disabled]="!profileForm.valid" class="submit-button">Save</ion-button>
+
+    </form>
+</ion-content>

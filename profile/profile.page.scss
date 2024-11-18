@@ -1,0 +1,138 @@
+.cover-photo {
+    background-color: #0073b1;
+    /* LinkedIn blue */
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.profile-photo {
+    position: absolute;
+    bottom: -40px;
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+}
+
+.profile-photo ion-icon {
+    font-size: 80px;
+    color: #0073b1;
+}
+
+.profile-info {
+    text-align: left;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.profile-info h2 {
+    margin: 10px 0;
+}
+
+.profile-actions {
+    display: flex;
+    justify-content: left;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.education-section,
+.experience-section,
+.skills-section,
+.people-also-viewed {
+    margin-top: 20px;
+}
+
+.education-item,
+.experience-item,
+.person-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.education-details h4,
+.experience-details h4 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.person-details p {
+    margin: 0;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    /* Vertically align items */
+    padding: 15px;
+}
+
+.profile-photo {
+    margin-right: 20px;
+    /* Space between the photo and details */
+}
+
+.profile-details {
+    flex: 1;
+    /* Take up remaining space */
+}
+
+.profile-pic-container {
+    width: 100px;
+    /* Adjust the size as needed */
+    height: 100px;
+    /* Make it a perfect square */
+    border-radius: 50%;
+    /* Make it circular */
+    overflow: hidden;
+    /* Hide overflow to ensure the image is within the circle */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* Align to the left */
+}
+
+.profile-pic {
+    width: 100%;
+    /* Full width of the container */
+    height: 100%;
+    /* Full height of the container */
+    object-fit: cover;
+    /* Crop the image to fit the container */
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    /* Vertically center the items */
+    gap: 20px;
+    /* Add space between the profile photo and details */
+}
+
+.profile-photo {
+    flex-shrink: 0;
+    /* Prevent the photo from shrinking */
+}
+
+.profile-pic {
+    width: 100px;
+    /* Set a fixed width for the profile picture */
+    height: 100px;
+    /* Set a fixed height for the profile picture */
+    border-radius: 50%;
+    /* Make the image circular */
+    object-fit: cover;
+    /* Crop the image to fit within the circular frame */
+}
+
+ion-button {
+    border-radius: 20px;
+    /* Adjust the value for more or less rounding */
+}

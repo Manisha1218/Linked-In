@@ -1,0 +1,202 @@
+<!-- <ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-button>
+                <ion-avatar slot="icon-only" class="profile-avatar">
+                    <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Profile">
+                </ion-avatar>
+            </ion-button>
+            <ion-searchbar placeholder="Search" class="search-bar" show-cancel-button="focus" style="width: 250px;"></ion-searchbar>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-button>
+                <ion-icon name="chatbubbles-outline" slot="icon-only"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item *ngFor="let post of posts" lines="none" class="post-item">
+            <ion-card>
+                <div class="post-header">
+                    <ion-avatar class="post-avatar">
+                        <img [src]="post.avatar" alt="{{ post.name }}'s Avatar">
+                    </ion-avatar>
+                    <div class="post-details">
+                        <h3 class="post-name">{{ post.name }}</h3>
+                        <ion-note color="medium" class="post-time">{{ post.time }}</ion-note>
+                    </div>
+                </div>
+
+                <ion-card-content>
+                    <p>{{ post.content }}</p>
+                    <img *ngIf="post.image" [src]="post.image" alt="Post Image" class="post-image">
+                </ion-card-content>
+
+                <ion-row class="post-actions">
+                    <ion-col>
+                        <ion-button (click)="toggleLike(post)" fill="clear" [ngClass]="{'liked': post.liked}">
+                            <ion-icon [name]="post.liked ? 'heart' : 'heart-outline'" slot="start"></ion-icon> Like
+                        </ion-button>
+                    </ion-col>
+                    <ion-col>
+                        <ion-button (click)="toggleComment(post)" fill="clear" color="medium">
+                            <ion-icon name="chatbubble-outline" slot="icon-only"></ion-icon> Comment
+                        </ion-button>
+                    </ion-col>
+                    <ion-col>
+                        <ion-button (click)="openShareOptions(post)" fill="clear" color="medium">
+                            <ion-icon name="share-social-outline" slot="icon-only"></ion-icon> Share
+                        </ion-button>
+                    </ion-col>
+                </ion-row>
+                <div *ngIf="post.showCommentInput" class="comment-input-container">
+                    <ion-input [(ngModel)]="commentContent" placeholder="Write a comment..." clearInput></ion-input>
+                    <ion-button (click)="submitComment(post)">Submit</ion-button>
+                </div>
+                <ion-list *ngIf="post.comments?.length">
+                    <ion-item *ngFor="let comment of post.comments">
+                        <strong>{{ comment.username }}:</strong> {{ comment.content }}
+                    </ion-item>
+                </ion-list>
+                <div *ngIf="post.showShareOptions" class="share-options">
+                    <ion-button fill="clear" color="primary" (click)="share('whatsapp', post)">
+                        <ion-icon name="logo-whatsapp" slot="icon-only"></ion-icon>
+                    </ion-button>
+                    <ion-button fill="clear" color="secondary" (click)="share('telegram', post)">
+                        <ion-icon name="paper-plane" slot="icon-only"></ion-icon>
+                    </ion-button>
+                    <ion-button fill="clear" color="tertiary" (click)="share('twitter', post)">
+                        <ion-icon name="logo-twitter" slot="icon-only"></ion-icon>
+                    </ion-button>
+                    <ion-button fill="clear" color="dark" (click)="copyLink(post)">
+                        <ion-icon name="link" slot="icon-only"></ion-icon>
+                    </ion-button>
+                </div>
+            </ion-card>
+        </ion-item>
+    </ion-list>
+</ion-content> -->
+
+
+
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-button>
+                <ion-avatar slot="icon-only" [routerLink]="['/profile']" class="profile-avatar">
+                    <img src="https://up.yimg.com/ib/th?id=OIP.wwy9gHI3ndvPOs89AmtDlAAAAA&pid=Api&rs=1&c=1&qlt=95&w=83&h=111" alt="Profile">
+                </ion-avatar>
+            </ion-button>
+            <ion-searchbar placeholder="Search" class="search-bar" show-cancel-button="focus" style="width: 250px;"></ion-searchbar>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-button>
+                <ion-button [routerLink]="['/message']" expand="full">
+                    <ion-icon name="chatbubbles-outline" slot="start"></ion-icon>
+                    <ion-badge>5</ion-badge>
+                </ion-button>
+
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <!-- Post Creation Section -->
+    <ion-card>
+        <ion-item lines="none">
+            <ion-avatar slot="start">
+                <img src="https://up.yimg.com/ib/th?id=OIP.wwy9gHI3ndvPOs89AmtDlAAAAA&pid=Api&rs=1&c=1&qlt=95&w=83&h=111" alt="User Avatar">
+            </ion-avatar>
+            <ion-input placeholder="Start a post..." readonly></ion-input>
+        </ion-item>
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <ion-button fill="clear" color="primary" expand="full">
+                        <ion-icon name="create-outline" slot="start"></ion-icon>
+                        Write Post
+                    </ion-button>
+                </ion-col>
+                <ion-col>
+                    <ion-button fill="clear" color="secondary" expand="full">
+                        <ion-icon name="camera-outline" slot="start"></ion-icon>
+                        Photo
+                    </ion-button>
+                </ion-col>
+                <ion-col>
+                    <ion-button fill="clear" color="tertiary" expand="full">
+                        <ion-icon name="videocam-outline" slot="start"></ion-icon>
+                        Video
+                    </ion-button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-card>
+
+    <!-- Feed Section -->
+    <ion-list>
+        <ion-card *ngFor="let post of posts">
+            <ion-item lines="none">
+                <ion-avatar slot="start">
+                    <img [src]="post.userAvatar" alt="User Avatar">
+                </ion-avatar>
+                <ion-label>
+                    <h2>{{ post.userName }}</h2>
+                    <p>{{ post.userJobTitle }}</p>
+                    <ion-note>{{ post.timestamp | date:'short' }}</ion-note>
+                </ion-label>
+            </ion-item>
+            <ion-card-content>
+                <p>{{ post.content }}</p>
+                <img *ngIf="post.image" [src]="post.image" alt="Post Image" class="post-image">
+            </ion-card-content>
+
+
+            <ion-row class="post-actions">
+                <ion-col>
+                    <ion-button (click)="toggleLike(post)" fill="clear" [ngClass]="{'liked': post.liked}">
+                        <ion-icon [name]="post.liked ? 'heart' : 'heart-outline'" slot="start"></ion-icon> Like
+                    </ion-button>
+                </ion-col>
+                <ion-col>
+                    <ion-button (click)="toggleComment(post)" fill="clear" color="medium">
+                        <ion-icon name="chatbubble-outline" slot="icon-only"></ion-icon> Comment
+                    </ion-button>
+                </ion-col>
+                <ion-col>
+                    <ion-button (click)="openShareOptions(post)" fill="clear" color="medium">
+                        <ion-icon name="share-social-outline" slot="icon-only"></ion-icon> Share
+                    </ion-button>
+                </ion-col>
+            </ion-row>
+            <div *ngIf="post.showCommentInput" class="comment-input-container">
+                <ion-input [(ngModel)]="commentContent" placeholder="Write a comment..." clearInput></ion-input>
+                <ion-button (click)="submitComment(post)">Submit</ion-button>
+            </div>
+            <ion-list *ngIf="post.comments?.length">
+                <ion-item *ngFor="let comment of post.comments">
+                    <strong>{{ comment.username }}:</strong> {{ comment.content }}
+                </ion-item>
+            </ion-list>
+            <div *ngIf="post.showShareOptions" class="share-options">
+                <ion-button fill="clear" color="primary" (click)="share('whatsapp', post)">
+                    <ion-icon name="logo-whatsapp" slot="icon-only"></ion-icon>
+                </ion-button>
+                <ion-button fill="clear" color="secondary" (click)="share('telegram', post)">
+                    <ion-icon name="paper-plane" slot="icon-only"></ion-icon>
+                </ion-button>
+                <ion-button fill="clear" color="tertiary" (click)="share('twitter', post)">
+                    <ion-icon name="logo-twitter" slot="icon-only"></ion-icon>
+                </ion-button>
+                <ion-button fill="clear" color="dark" (click)="copyLink(post)">
+                    <ion-icon name="link" slot="icon-only"></ion-icon>
+                </ion-button>
+            </div>
+        </ion-card>
+
+    </ion-list>
+</ion-content>

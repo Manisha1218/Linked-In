@@ -1,0 +1,36 @@
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+
+.rounded-button {
+    flex: 1;
+    margin-right: 5px; // Add margin for spacing
+    border-radius: 20px; // Make the buttons rounded
+    --padding-start: 16px; // Increase padding for better appearance
+    --padding-end: 16px; // Increase padding for better appearance
+    font-weight: bold; // Make the text bold
+    transition: all 0.2s; // Add a transition for hover effect
+}
+
+.rounded-button:last-child {
+    margin-right: 0; // Remove margin from the last button
+}
+
+.rounded-button:hover {
+    transform: scale(1.05); // Scale effect on hover
+}
+
+ion-item {
+    --background: #ffffff; // White background for each item
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Subtle shadow for depth
+    border-radius: 12px; // Rounded corners for the item
+    margin-bottom: 15px; // Spacing between items
+    padding: 15px; // Padding around each item
+}
+
+ion-avatar {
+    border: 2px solid #007bff; // Blue border around avatar
+    border-radius: 50%; // Circular avatar
+}

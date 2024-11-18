@@ -1,0 +1,35 @@
+ion-card {
+    margin: 10px;
+    border-radius: 12px;
+    --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.post-date {
+    font-size: 12px;
+    color: #888;
+}
+
+ion-icon {
+    height: 40px;
+    width: 40px;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+}
+
+.profile-pic {
+    width: 30px;
+    /* Set the desired width */
+    height: 30px;
+    /* Set the desired height */
+}
+
+.profile-pic img {
+    width: 100%;
+    /* Make the image fill the avatar */
+    height: 100%;
+    border-radius: 50%;
+    /* Ensure the image is circular */
+}

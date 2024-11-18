@@ -1,0 +1,19 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title>Post Jobs</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+        <ion-label position="floating">Job Title</ion-label>
+        <ion-input [(ngModel)]="jobTitle"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label position="floating">Job Description</ion-label>
+        <ion-textarea [(ngModel)]="jobDescription"></ion-textarea>
+    </ion-item>
+
+    <ion-button expand="full" (click)="postJob()">Post Job</ion-button>
+</ion-content>
